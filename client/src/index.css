@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+      "Yu Gothic", sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.2);
+  }
+}

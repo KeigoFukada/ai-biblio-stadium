@@ -11,6 +11,11 @@ import { useSceneBGM } from "@/hooks/useSceneBGM";
 import { MuteButton } from "@/components/MuteButton";
 import type { DreamCharacter, DreamBattle } from "@shared/types";
 
+/** AIが返すテキストに含まれる先頭・末尾の鍵括弧を除去（二重括弧防止） */
+function sq(text: string): string {
+  return text.replace(/^[「『]/, "").replace(/[」』]$/, "");
+}
+
 // バトル開幕アナウンス（文豪の組み合わせに応じて変える）
 function getBattleAnnounce(name1: string, name2: string): string {
   const patterns = [
@@ -110,7 +115,7 @@ function PresentationCard({
   const isMyVote = votedSide === side;
   const isChamp = voted && isWinning && !isTied;
 
-  const speakText = `${pres.character.name}が、「${pres.bookTitle}」を紹介します。${pres.opening}。${pres.body} ${pres.closing}`;
+  const speakText = `${pres.character.name}が、「${pres.bookTitle}」を紹介します。${sq(pres.opening)}。${pres.body} ${sq(pres.closing)}`;
 
   return (
     <motion.div
@@ -180,7 +185,7 @@ function PresentationCard({
         {/* 冒頭フック */}
         <div className="p-3 rounded-xl bg-white/5 border border-white/10">
           <p className="text-white/40 text-xs mb-1.5 font-bold tracking-wide">🎙 つかみ</p>
-          <p className="text-white text-sm font-medium leading-relaxed italic">「{pres.opening}」</p>
+          <p className="text-white text-sm font-medium leading-relaxed italic">「{sq(pres.opening)}」</p>
         </div>
 
         {/* 本文 */}
@@ -189,7 +194,7 @@ function PresentationCard({
         {/* 締め */}
         <div className="p-3 rounded-xl bg-white/5 border border-white/10">
           <p className="text-white/40 text-xs mb-1.5 font-bold tracking-wide">🎯 締め</p>
-          <p className="text-white text-sm font-medium leading-relaxed italic">「{pres.closing}」</p>
+          <p className="text-white text-sm font-medium leading-relaxed italic">「{sq(pres.closing)}」</p>
         </div>
 
         {/* おすすめ対象 */}

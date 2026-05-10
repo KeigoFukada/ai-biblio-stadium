@@ -287,7 +287,7 @@ function KeyPointsStep({
       </div>
 
       <div>
-        <h2 className="text-2xl font-black text-white mb-2">あなたを動かした瞬間は？</h2>
+        <h2 className="text-2xl font-black text-white mb-2">あなたの心を動かした瞬間は？</h2>
         <p className="text-slate-400 text-sm">
           心が震えたシーン・台詞・考え方を思い出して書いてみて。AIへの「燃料」になります（1〜10個）
         </p>

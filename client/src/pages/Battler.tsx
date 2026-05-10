@@ -8,6 +8,11 @@ import type { BattlerPick, BattlerPreference } from "@shared/types";
 import { useSceneBGM } from "@/hooks/useSceneBGM";
 import { MuteButton } from "@/components/MuteButton";
 
+/** AIが返すテキストに含まれる先頭・末尾の鍵括弧を除去（二重括弧防止） */
+function sq(text: string): string {
+  return text.replace(/^[「『]/, "").replace(/[」』]$/, "");
+}
+
 // ── LocalStorage ───────────────────────────────────────────────────────────────
 const PREF_KEY = "battlerPreference";
 
@@ -157,7 +162,7 @@ function BattlerCard({ pick, index, voted, onVote }: BattlerCardProps) {
           className="text-[17px] font-black leading-snug tracking-tight"
           style={{ color: battler.accentColor }}
         >
-          「{hook}」
+          「{sq(hook)}」
         </blockquote>
 
         {/* ピッチ */}

@@ -1,9 +1,9 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
-import { presentationRouter } from "./routers/presentation";
-import { booksRouter } from "./routers/books";
-import { dreamMatchRouter } from "./routers/dreamMatch";
-import { battlerRouter } from "./routers/battler";
+import { presentationRouter } from "./routers/presentation.js";
+import { booksRouter } from "./routers/books.js";
+import { dreamMatchRouter } from "./routers/dreamMatch.js";
+import { battlerRouter } from "./routers/battler.js";
 
 const t = initTRPC.context<object>().create({ transformer: superjson });
 

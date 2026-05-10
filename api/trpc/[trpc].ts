@@ -16,7 +16,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const routerMod = await import("../../server/routers");
+    const routerMod = await import("../../server/routers.js");
     appRouter = routerMod.appRouter;
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

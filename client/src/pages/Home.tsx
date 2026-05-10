@@ -12,7 +12,7 @@ const features = [
     title: "壁打ちモード",
     subtitle: "最強の練習相手",
     description:
-      "本のタイトルと感動ポイントを入力するだけで、AIが2〜3分プレゼンの構成案を3パターン提案。さらに仮想オーディエンスとして鋭い質問を投げかけ、本番力を鍛えます。",
+      "本のタイトルと感動ポイントを入力するだけで、AIが2〜3分プレゼンの構成案を3パターン提案。さらにAIが仮想オーディエンスとなって鋭い質問を投げかけ、本番力を鍛えます。",
     href: "/assist",
     gradient: "from-violet-600 to-indigo-600",
     glow: "shadow-violet-500/30",
@@ -26,7 +26,7 @@ const features = [
     title: "ドリームマッチ",
     subtitle: "偉人AIとの激突",
     description:
-      "太宰治や夏目漱石などのAIキャラクターが現代の本をプレゼン。あなたがオーディエンスとして「チャンプ本」に投票。",
+      "太宰治や夏目漱石などのAIキャラクターが現代の本をプレゼン。あなたがオーディエンスとなって「チャンプ本」に投票できます。",
     href: "/dream",
     gradient: "from-amber-500 to-orange-500",
     glow: "shadow-amber-500/30",

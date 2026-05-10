@@ -403,7 +403,7 @@ export default function Battler() {
               {pref.sessionCount === 0
                 ? "はじめまして！4人がそれぞれ1冊を本気でプレゼンします"
                 : totalVotes >= 3
-                ? `${totalVotes}票の記録をもとにAIが好みを反映してます`
+                ? `${totalVotes}票の記録をもとにAIが好みを反映しています`
                 : `セット${pref.sessionCount + 1}回目 — 投票するとAIが学習します`}
             </span>
           </div>

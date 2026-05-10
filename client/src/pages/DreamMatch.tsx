@@ -723,7 +723,7 @@ export default function DreamMatch() {
                       exit={{ opacity: 0 }}
                       className="text-sm text-slate-400"
                     >
-                      プレゼンを読んで、<span className="text-white font-bold">読みたくなった本</span>に投票してください
+                      プレゼンを聞いて、<span className="text-white font-bold">読みたくなった本</span>に投票してください
                     </motion.p>
                   ) : (
                     <motion.div

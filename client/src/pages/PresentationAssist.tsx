@@ -89,7 +89,7 @@ function BookSearchStep({
     <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-black text-white mb-2">どの本を語る？</h2>
-        <p className="text-slate-400">タイトルや著者名で検索、見つからなければ直接入力もOK</p>
+        <p className="text-slate-400">タイトルや著者名で検索できます。見つからなければ直接入力もOK</p>
       </div>
 
       {!manualMode ? (

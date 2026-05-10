@@ -1,6 +1,4 @@
 {
-  "buildCommand": "pnpm exec vite build",
-  "outputDirectory": "dist/public",
   "rewrites": [
     { "source": "/api/tts", "destination": "/api/index" },
     { "source": "/trpc/:path*", "destination": "/api/index" },
@@ -10,8 +8,7 @@
     "web": {
       "routePrefix": "/",
       "framework": "vite",
-      "buildCommand": "pnpm exec vite build",
-      "outputDirectory": "dist/public"
+      "buildCommand": "pnpm exec vite build"
     }
   }
 }

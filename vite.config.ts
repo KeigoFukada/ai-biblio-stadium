@@ -19,7 +19,9 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../dist/public",
+    // Vercel は dist/ をデフォルト出力先として期待するため環境で切り替え
+    // Render/ローカルビルド時は dist/public/ に出力（サーバーが静的配信するパス）
+    outDir: process.env.VERCEL ? "../dist" : "../dist/public",
     emptyOutDir: true,
     rollupOptions: {
       output: {

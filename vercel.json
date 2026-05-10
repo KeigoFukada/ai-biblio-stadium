@@ -1,14 +1,8 @@
 {
+  "framework": null,
   "buildCommand": "pnpm exec vite build",
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ],
-  "experimentalServices": {
-    "web": {
-      "routePrefix": "/",
-      "framework": "vite",
-      "buildCommand": "pnpm exec vite build"
-    }
-  }
+  ]
 }

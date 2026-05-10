@@ -12,6 +12,11 @@ import { Textarea } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useSpeechRecognition, useSpeechSynthesis } from "@/hooks/useSpeech";
 import type { QAQuestion, QAFeedback } from "@shared/types";
+
+/** AIが返すテキストに含まれる先頭・末尾の鍵括弧を除去（二重括弧防止） */
+function sq(text: string): string {
+  return text.replace(/^[「『]/, "").replace(/[」』]$/, "");
+}
 import { useSceneBGM } from "@/hooks/useSceneBGM";
 import { MuteButton } from "@/components/MuteButton";
 
@@ -534,7 +539,7 @@ export default function MockQA() {
                   {/* 追加質問 */}
                   <div className="p-4 rounded-xl bg-violet-500/10 border border-violet-500/20">
                     <p className="text-violet-400 font-bold text-sm mb-2">🎯 審査員がさらに掘ってきそうな質問</p>
-                    <p className="text-slate-300 text-sm">「{feedback.followUpSuggestion}」</p>
+                    <p className="text-slate-300 text-sm">「{sq(feedback.followUpSuggestion)}」</p>
                   </div>
 
                   <div className="flex gap-3">

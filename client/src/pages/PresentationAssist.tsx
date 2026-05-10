@@ -13,6 +13,11 @@ import type { BookInfo, PresentationStructure } from "@shared/types";
 import { useSceneBGM } from "@/hooks/useSceneBGM";
 import { MuteButton } from "@/components/MuteButton";
 
+/** AIが返すテキストに含まれる先頭・末尾の鍵括弧を除去（二重括弧防止） */
+function sq(text: string): string {
+  return text.replace(/^[「『]/, "").replace(/[」』]$/, "");
+}
+
 const styleConfig = {
   logical: { color: "from-blue-500 to-cyan-500", badge: "blue" as const, icon: "🧠" },
   story: { color: "from-violet-500 to-purple-500", badge: "default" as const, icon: "📖" },
@@ -446,7 +451,7 @@ function StructuresStep({
               <div className="flex items-center gap-2 text-amber-400 text-xs font-bold mb-2">
                 <Quote className="w-3 h-3" /> 冒頭フック
               </div>
-              <p className="text-white font-medium">「{active.openingHook}」</p>
+              <p className="text-white font-medium">「{sq(active.openingHook)}」</p>
             </div>
 
             {/* セクション */}
@@ -474,7 +479,7 @@ function StructuresStep({
               <div className="flex items-center gap-2 text-violet-400 text-xs font-bold mb-2">
                 <Quote className="w-3 h-3" /> 締めの一言
               </div>
-              <p className="text-white font-medium">「{active.closingLine}」</p>
+              <p className="text-white font-medium">「{sq(active.closingLine)}」</p>
             </div>
           </motion.div>
         </AnimatePresence>

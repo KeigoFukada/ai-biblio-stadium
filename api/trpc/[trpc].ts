@@ -11,6 +11,6 @@ const handler = createExpressMiddleware({
 
 const app = express();
 app.use(express.json());
-app.use("/", handler);
+app.use("/api/trpc", handler);
 
 export default app;

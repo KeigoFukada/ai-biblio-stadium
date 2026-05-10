@@ -14,7 +14,12 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api/tts": "http://localhost:3000",
+      // ローカル開発: /api/trpc → /trpc (Vercel本番ではapi/trpc/[trpc].tsが処理)
+      "/api/trpc": {
+        target: "http://localhost:3000",
+        rewrite: (path: string) => path.replace(/^\/api\/trpc/, "/trpc"),
+      },
       "/trpc": "http://localhost:3000",
     },
   },

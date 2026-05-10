@@ -5,5 +5,13 @@
     { "source": "/api/tts", "destination": "/api/index" },
     { "source": "/trpc/:path*", "destination": "/api/index" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "experimentalServices": {
+    "web": {
+      "routePrefix": "/",
+      "framework": "vite",
+      "buildCommand": "pnpm exec vite build",
+      "outputDirectory": "dist/public"
+    }
+  }
 }

@@ -46,7 +46,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const responseBody = await response.text();
     res.send(responseBody);
   } catch (err) {
-    console.error("[tRPC] handler error:", err);
-    res.status(500).json({ error: "Internal server error" });
+    const message = err instanceof Error ? err.message : String(err);
+    const stack = err instanceof Error ? err.stack : undefined;
+    console.error("[tRPC] handler error:", message, stack);
+    res.status(500).json({ error: "Internal server error", message, stack });
   }
 }
